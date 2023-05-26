@@ -4,9 +4,11 @@ Go programs to query and update drtoolkit.pro db
 ## DATABASE
 postgresql14
 
+## BACKEND
+golang
 
-# HOWTO
-## DB
+## HOWTO
+### DB
 To install postgres, use homebrew
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -35,7 +37,7 @@ psql mydb
 
 ```
 
-## CONNECTING FROM GO
+### CONNECTING FROM GO
 Install the pq package 
 
 ```
