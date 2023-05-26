@@ -12,14 +12,23 @@ golang
 To install postgres, use homebrew
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
 ```
 
 Remember to upgrade brew before installing
 ```
 brew upgrade
-
 ```
+
+Install postgres and start the service
+```
+brew install postgresql
+```
+Start the service
+```
+brew services start postgresql
+```
+
+*Remember, it is services not service. Don't sit there and scratch your head.*
 
 The path to postgresql files for MAC is
 > /usr/local/opt/postgresql@14
