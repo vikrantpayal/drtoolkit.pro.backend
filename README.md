@@ -5,7 +5,7 @@ Go programs to query and update drtoolkit.pro db
 postgresql14
 
 ## BACKEND
-golang
+golang v1.17.7
 
 ## HOWTO
 ### DB
@@ -35,15 +35,12 @@ The path to postgresql files for MAC is
 
 Create database with 
 ```
-
 createdb mydb
-
 ```
 
 Access db with 
 ```
 psql mydb
-
 ```
 
 ### CONNECTING FROM GO
@@ -51,8 +48,12 @@ Install the pq package
 
 ```
 go get github.com/lib/pq
-
 ```
 
+Init the new progres
+```
+go mod init example/hello
+```
 
-
+Connection and CRUD code (go>postgresql)
+> https://golangdocs.com/golang-postgresql-example
