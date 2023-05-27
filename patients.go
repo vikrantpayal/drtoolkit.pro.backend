@@ -23,6 +23,24 @@ func main(){
    CheckError(err)
 
 
+    rows, err := db.Query("select * from patients")
+    CheckError(err)
+
+    defer rows.Close()
+
+    for rows.Next(){
+        var dr int
+        var patient_id int
+        var patient_fname string
+        var patient_lname string
+
+        err = rows.Scan(&dr, &patient_id, &patient_fname, &patient_lname)
+        CheckError(err)
+        fmt.Println(dr, patient_id, patient_fname, patient_lname)
+    }
+
+   CheckError(err)
+
    // close db
    defer db.Close()
 

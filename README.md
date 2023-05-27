@@ -43,7 +43,7 @@ Access db with
 psql mydb
 ```
 
-### CONNECTING FROM GO
+## CONNECTING  GO to POSTGRESQL
 Install the pq package 
 
 ```
@@ -57,3 +57,7 @@ go mod init example/hello
 
 Connection and CRUD code (go>postgresql)
 > https://golangdocs.com/golang-postgresql-example
+
+
+## REACT to GOLANG
+https://www.freecodecamp.org/news/how-to-build-a-web-app-with-go-gin-and-react-cffdc473576/
