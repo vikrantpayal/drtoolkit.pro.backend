@@ -4,12 +4,12 @@ import(
     "github.com/gin-gonic/contrib/static"
     "github.com/gin-gonic/gin"
 )
-import (
+/*import (
 	"database/sql"
 	"fmt"
 
 	_ "github.com/lib/pq"
-)
+)*/
 
 const (
 	host     = "localhost"
@@ -32,13 +32,21 @@ func main() {
 		})
 	  })
 	}
-    router.Run(":3000")  
-	getPatients()
+	api.GET("/patients", GetPatients)
+	router.Run(":3000")  
+
+	//GetPatients()
 }
 
 
 
-func getPatients() {
+func GetPatients(c *gin.Context) {
+
+	c.Header("Content-Type", "application/json")
+	c.JSON(http.StatusOK, gin.H {
+	  "message":"Patients handler not implemented yet",
+	})
+	/*
 	// connection string
 	psqlconn := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", host, port, user, password, dbname)
 
@@ -78,4 +86,5 @@ func CheckError(err error) {
 	if err != nil {
 		panic(err)
 	}
+	*/
 }
