@@ -1,5 +1,9 @@
 package main
-
+import(
+    "net/http"
+    "github.com/gin-gonic/contrib/static"
+    "github.com/gin-gonic/gin"
+)
 import (
 	"database/sql"
 	"fmt"
@@ -11,11 +15,30 @@ const (
 	host     = "localhost"
 	port     = 5432
 	user     = "drdev_backend"
-	password = "bhejaFry#3"
+	password = ""
 	dbname   = "drdev"
 )
 
+
+
 func main() {
+    router :=gin.Default()
+    router.Use(static.Serve("/", static.LocalFile("./views", true)))
+	api := router.Group("/api")
+	{
+	  api.GET("/", func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H {
+		  "message": "pong",
+		})
+	  })
+	}
+    router.Run(":3000")  
+	getPatients()
+}
+
+
+
+func getPatients() {
 	// connection string
 	psqlconn := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", host, port, user, password, dbname)
 
